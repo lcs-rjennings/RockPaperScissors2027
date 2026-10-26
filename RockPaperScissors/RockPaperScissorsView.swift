@@ -158,21 +158,6 @@ struct RockPaperScissorsView: View {
     
     // MARK: - Functions
     
-    // The computer cheats and picks the winning option.
-    func moveThatBeats() {
-        
-        if playerMove == "Fish" {
-            computerMove = "Parrot"
-        }
-        else if playerMove == "Parrot" {
-            computerMove = "Squirrel"
-        }
-        else if playerMove == "Squirrel" {
-            computerMove = "Fish"
-        }
-        
-    }
-    
     // The player picked rock.
     func chooseRock() {
         playerMove = "Fish"
@@ -215,6 +200,21 @@ struct RockPaperScissorsView: View {
                 computerEmoji = squirrelEmoji
             }
         }
+    }
+    
+    // The computer cheats and picks the winning option.
+    func moveThatBeats() {
+        
+        if playerMove == "Fish" {
+            computerMove = "Parrot"
+        }
+        else if playerMove == "Parrot" {
+            computerMove = "Squirrel"
+        }
+        else {
+            computerMove = "Fish"
+        }
+        
     }
     
     // Plays one round, once the player has picked a move.
