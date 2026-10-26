@@ -56,7 +56,7 @@ struct RockPaperScissorsView: View {
             Text("Fish Parrot Squirrel")
                 .font(.largeTitle)
                 .bold()
-                .foregroundStyle(Color.teal)
+                .foregroundStyle(Color.orange)
             // Shrink the title a little if it does not fit on one line.
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
@@ -91,7 +91,7 @@ struct RockPaperScissorsView: View {
                 .frame(maxWidth: .infinity)
             }
             .padding(.vertical)
-            .background(Color.teal.opacity(0.15))
+            .background(Color.orange.opacity(0.15))
             .clipShape(RoundedRectangle(cornerRadius: 24))
             
             // The result of the round.
@@ -144,7 +144,7 @@ struct RockPaperScissorsView: View {
             .buttonStyle(.bordered)
             .font(.headline)
             // TRY: Change teal to another colour. Change it in the title and the moves box too.
-            .tint(Color.teal)
+            .tint(Color.orange)
             
             Text("Rounds played: \(roundsPlayed)")
                 .font(.headline)

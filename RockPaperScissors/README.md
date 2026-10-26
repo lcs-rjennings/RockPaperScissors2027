@@ -5,6 +5,7 @@ You against the computer. Click rock, paper or scissors. The computer picks its 
 NEW: The game tells you whether it was a tie, the player won, or the computer won.
 NEW: The game cheats 30% of the time and wins.
 NEW: Instead of Rock, Paper and Scissors, it is now Fish, Parrot, Squirrel.
+NEW: Changed colour scheme from teal to orange.
 
 ## How to run the game
 
