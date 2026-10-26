@@ -6,20 +6,20 @@
 //  You pick rock, paper or scissors. The computer picks one at random.
 //  The app shows both moves and counts how many rounds you have played.
 //  It can tell when a round is a tie.
+//  Game cheats 30% of the time
+//  It can tell when the player won or the computer won.
 //
 //  WHAT IT DOES NOT DO YET
-//  When the two moves are different, it only says "Someone won".
-//  It does not know who!
-//  Rock beats scissors, scissors beats paper, and paper beats rock.
+//  Does not have a rat when cheating.
 //
 
 import SwiftUI
 
 // The picture for each move. These are emoji, so they are just text.
 // TRY: Change these to other emoji to give the game a new theme.
-let rockEmoji: String = "🪨"
-let paperEmoji: String = "📄"
-let scissorsEmoji: String = "✂️"
+let fishEmoji: String = "🐟"
+let parrotEmoji: String = "🦜"
+let squirrelEmoji: String = "🐿️"
 
 // The game itself: what it remembers, what it shows on the screen,
 // and what it does when you click a button.
@@ -53,7 +53,7 @@ struct RockPaperScissorsView: View {
         VStack(spacing: 24) {
             
             // The title at the top of the screen.
-            Text("Rock Paper Scissors")
+            Text("Fish Parrot Squirrel")
                 .font(.largeTitle)
                 .bold()
                 .foregroundStyle(Color.teal)
@@ -80,7 +80,8 @@ struct RockPaperScissorsView: View {
                     .foregroundStyle(Color.secondary)
                 
                 VStack(spacing: 8) {
-                    Label("Computer", systemImage: "desktopcomputer")
+                    Label("Computer", systemImage:
+                            "desktopcomputer")
                         .font(.headline)
                     Text(computerEmoji)
                         .font(.system(size: 90))
@@ -111,9 +112,9 @@ struct RockPaperScissorsView: View {
                     chooseRock()
                 } label: {
                     VStack {
-                        Text(rockEmoji)
+                        Text(fishEmoji)
                             .font(.system(size: 44))
-                        Text("Rock")
+                        Text("Fish")
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -122,9 +123,9 @@ struct RockPaperScissorsView: View {
                     choosePaper()
                 } label: {
                     VStack {
-                        Text(paperEmoji)
+                        Text(parrotEmoji)
                             .font(.system(size: 44))
-                        Text("Paper")
+                        Text("Parrot")
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -133,9 +134,9 @@ struct RockPaperScissorsView: View {
                     chooseScissors()
                 } label: {
                     VStack {
-                        Text(scissorsEmoji)
+                        Text(squirrelEmoji)
                             .font(.system(size: 44))
-                        Text("Scissors")
+                        Text("Squirrel")
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -160,36 +161,36 @@ struct RockPaperScissorsView: View {
     // The computer cheats and picks the winning option.
     func moveThatBeats() {
         
-        if playerMove == "Rock" {
-            computerMove = "Paper"
+        if playerMove == "Fish" {
+            computerMove = "Parrot"
         }
-        else if playerMove == "Paper" {
-            computerMove = "Scissors"
+        else if playerMove == "Parrot" {
+            computerMove = "Squirrel"
         }
-        else if playerMove == "Scissors" {
-            computerMove = "Rock"
+        else if playerMove == "Squirrel" {
+            computerMove = "Fish"
         }
         
     }
     
     // The player picked rock.
     func chooseRock() {
-        playerMove = "Rock"
-        playerEmoji = rockEmoji
+        playerMove = "Fish"
+        playerEmoji = fishEmoji
         playRound()
     }
     
     // The player picked paper.
     func choosePaper() {
-        playerMove = "Paper"
-        playerEmoji = paperEmoji
+        playerMove = "Parrot"
+        playerEmoji = parrotEmoji
         playRound()
     }
     
     // The player picked scissors.
     func chooseScissors() {
-        playerMove = "Scissors"
-        playerEmoji = scissorsEmoji
+        playerMove = "Squirrel"
+        playerEmoji = squirrelEmoji
         playRound()
     }
     
@@ -204,14 +205,14 @@ struct RockPaperScissorsView: View {
             let randomNumber: Int = Int.random(in: 1...3)
             
             if randomNumber == 1 {
-                computerMove = "Rock"
-                computerEmoji = rockEmoji
+                computerMove = "Fish"
+                computerEmoji = fishEmoji
             } else if randomNumber == 2 {
-                computerMove = "Paper"
-                computerEmoji = paperEmoji
+                computerMove = "Parrot"
+                computerEmoji = parrotEmoji
             } else {
-                computerMove = "Scissors"
-                computerEmoji = scissorsEmoji
+                computerMove = "Squirrel"
+                computerEmoji = squirrelEmoji
             }
         }
     }
@@ -225,12 +226,12 @@ struct RockPaperScissorsView: View {
             // TRY: Change what the game says when there is a tie.
             result = "It's a tie!"
         } else {
-            if playerMove == "Rock" &&
-                computerMove == "Scissors" ||
-                playerMove == "Paper" &&
-                computerMove == "Rock" ||
-                playerMove == "Scissors" &&
-                computerMove == "Paper" {
+            if playerMove == "Fish" &&
+                computerMove == "Squirrel" ||
+                playerMove == "Parrot" &&
+                computerMove == "Fish" ||
+                playerMove == "Squirrel" &&
+                computerMove == "Parrot" {
                 result = "Player Won"
                 
             } else {
