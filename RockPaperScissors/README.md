@@ -1,11 +1,6 @@
-# Rock Paper Scissors
+# Fish Parrot Squirrel (Rock Paper Scissors) - How to play
 
-You against the computer. Click rock, paper or scissors. The computer picks its move at random, and the app shows both moves side by side. It also counts how many rounds you have played.
-
-NEW: The game tells you whether it was a tie, the player won, or the computer won.
-NEW: The game cheats 30% of the time and wins.
-NEW: Instead of Rock, Paper and Scissors, it is now Fish, Parrot, Squirrel.
-NEW: Changed colour scheme from teal to orange 
+You against the computer. Click fish, parrot or squirrel. The computer picks its move at random (mostly!), and the app shows both moves side by side. It also counts how many rounds you have played. Fish beats squirrel, parrot beats fish, and squirrel beats parrot.
 
 ## How to run the game
 
@@ -19,13 +14,18 @@ To read the code, click **RockPaperScissorsView.swift** in the list of files on 
 
 ## How it works
 
-A new feature has been added where the computer cheats 30% of the time. It is done through the variable cheatTime which is a Bool variable. The code randomly generates a number between 1 and 10 every round, and if that number is < 4, then cheatTime becomes true. In the function chooseComputerMove, when cheatTime is true, the function moveThatBeats runs, and it uses if/else if/else to change the computerMove to the winning move depending what the playerMove is (i.e. computerMove = "Parrot" (Paper) if playerMove = "Fish" (Rock)).
+A new feature has been added where the computer cheats 30% of the time. It is done through the variable cheatTime which is a Bool variable. The code randomly generates a number between 1 and 10 every round, and if that number is smaller than 4, then cheatTime becomes true. In the function chooseComputerMove, when cheatTime is true, the function moveThatBeats runs, and it uses if/else if/else to change the computerMove to the winning move depending what the playerMove is (i.e. computerMove = "Parrot" (Paper) if playerMove = "Fish" (Rock)).
 
-In function playRound, it is detected who won: If the computer won, the player won, or it was a tie. 
+In function playRound, it is detected who won: If the computer won, the player won, or it was a tie. It detects a tie by checking if the computerMove = the playerMove. It detects if the player won by using an else if statement containing && and || statements to see if the player chose the winning option. I chose to use && and || statements because it uses less lines of code than multiple "if" statements, and it is clearer to read. Finally, to check if the computer won, there is an else statement because the computer winning is the only other possible solution. 
+
+## What the game does now/what I added
+
+1. The game tells you whether it was a tie, the player won, or the computer won.
+2. The game cheats 30% of the time and wins.
+3. Instead of Rock, Paper and Scissors, it is now Fish, Parrot, Squirrel.
+4. Changed colour scheme from teal to orange.
 
 ## Credits
-
-I wrote this starter game for my ICS3U course at Lakefield College School.
 
 When you make the game your own, add to this list. Name any AI tool you used and what you used it for. Name any code, images or sounds that came from somewhere else, and say where they came from.
 
