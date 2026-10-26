@@ -223,9 +223,9 @@ struct RockPaperScissorsView: View {
         roundsPlayed += 1
         
         if playerMove == computerMove {
-            // TRY: Change what the game says when there is a tie.
             result = "It's a tie!"
         } else {
+            // Rock = Fish, Paper = Parrot, Scissors = Squirrel, if that makes things more clear.
             if playerMove == "Fish" &&
                 computerMove == "Squirrel" ||
                 playerMove == "Parrot" &&
