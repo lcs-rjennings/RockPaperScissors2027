@@ -12,6 +12,8 @@ The first run takes a minute while Xcode builds the app. After that, the game op
 
 To read the code, click **RockPaperScissorsView.swift** in the list of files on the left. Most of the game lives in that one file.
 
+CHEATING PART DOES NOT WORK
+
 ## How it works
 
 A new feature has been added where the computer cheats 30% of the time. It is done through the variable cheatTime which is a Bool variable. The code randomly generates a number between 1 and 10 every round, and if that number is smaller than 4, then cheatTime becomes true. In the function chooseComputerMove, when cheatTime is true, the function moveThatBeats runs, and it uses if/else if/else to change the computerMove to the winning move depending what the playerMove is (i.e. computerMove = "Parrot" (Paper) if playerMove = "Fish" (Rock)).

@@ -44,7 +44,7 @@ struct RockPaperScissorsView: View {
     @State var roundsPlayed: Int = 0
     
     // 30% chance that computer cheats
-    @State var cheatTime: Bool = Int.random(in: 1...10) <= 3
+    @State var cheatTime: Bool = Int.random(in: 1...10) <= 10
     
     
     // MARK: - Computed properties
