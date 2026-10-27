@@ -1,6 +1,6 @@
 # Fish Parrot Squirrel (Rock Paper Scissors) - How to play
 
-You against the computer. Click fish, parrot or squirrel. The computer picks its move at random (mostly!), and the app shows both moves side by side. It also counts how many rounds you have played. Fish beats squirrel, parrot beats fish, and squirrel beats parrot.
+You against the computer. Click fish, parrot or squirrel. The computer picks its move at random (mostly!), and the app shows both moves side by side. It also counts how many rounds you have played. Fish beats squirrel, parrot beats fish, and squirrel beats parrot. Press "New Round" button to play another round.
 
 ## How to run the game
 
@@ -21,12 +21,10 @@ In function playRound, it is detected who won: If the computer won, the player w
 ## What the game does now/what I added
 
 1. The game tells you whether it was a tie, the player won, or the computer won.
-2. The game cheats 30% of the time and wins. (Not working)
+2. The game cheats 30% of the time and wins.
 3. Instead of Rock, Paper and Scissors, it is now Fish, Parrot, Squirrel.
 4. Changed colour scheme from teal to orange because orange is my favourite colour!
-
-What it does not do yet:
-1. I recognize that the computer cheating feature isn't working. 
+5. New round button resets the code and allows the player to play again.
 
 ## Testing
 
@@ -34,11 +32,12 @@ What it does not do yet:
 | :--- | :---: | :---: | --: |
 | Make the computer cheat 100% of the time. |  Computer would cheat if the random number from 1 to 10 was smaller than 11. | The computer should always beat the player. | The computer always beat the player. |
 | Make sure that Fish beats Squirrel, Squirrel beats Parrot, and Parrot beats Fish. | Chose each option until the computer chose the winning option, losing option, and option that tied. | The display message should appear accordingly to the situation. | The correct message appeared each round. |
-| Make the computer have a personalized message when cheating |  Instead of simply "Computer Won", "Computer Cheated" appears when cheatTime = true | The "Computer Cheated" line should appear one third of the time with the normal code, but I also tried it with the computer cheating 100% of the time. | The message did not appear for the 30% chance, but it did appear when the computer cheated every round. |
+| Make the computer have a personalized message when cheating. |  Instead of simply "Computer Won", "Computer Cheated" appears when cheatTime = true | The "Computer Cheated" line should appear one third of the time with the normal code, but I also tried it with the computer cheating 100% of the time. | The message did not appear for the 30% chance, but it did appear when the computer cheated every round. |
+| Check if the computer has a chance to cheat from each button pressed. | Clicked each button multiple times until "Computer Cheated" appeared. | "Computer Cheated" message appears and cheatTime = True | "Computer Cheated" message appears and cheatTime = True |
 
 ## Credits
 
 When you make the game your own, add to this list. Name any AI tool you used and what you used it for. Name any code, images or sounds that came from somewhere else, and say where they came from.
 
 - Starter game: Mr. Gordon, ICS3U
-- Charlotte helped me decide when the computer wins or the player wins, with the && and || lines.
+- Charlotte helped me write and understand some of the code regarding the reset button and allowing the computer to cheat each round.

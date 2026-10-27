@@ -156,17 +156,36 @@ struct RockPaperScissorsView: View {
             Text("Rounds played: \(roundsPlayed)")
                 .font(.headline)
                 .foregroundStyle(Color.secondary)
+            
+            Button {
+                newRound()
+            } label: {
+                Text("New Round")
+                .frame(maxWidth: .infinity)
+            }
         }
         .padding(32)
         .fontDesign(.rounded)
         // How big the game's window is on the Mac. It can be made taller or wider.
-        .frame(minWidth: 520, minHeight: 640)
+        .frame(minWidth: 520, minHeight: 700)
     }
     
     // MARK: - Functions
     
+    func newRound() {
+        playerMove = "No move yet"
+        playerEmoji = "❓"
+        computerMove = "No move yet"
+        computerEmoji = "❓"
+        result = "Let's play!"
+        reasonForResult = ""
+        cheatTime = Int.random(in: 1...10) <= 3
+        roundsPlayed = 0
+    }
+    
     // The player picked fish.
     func chooseRock() {
+        cheatTime = Int.random(in: 1...10) <= 3
         playerMove = "Fish"
         playerEmoji = fishEmoji
         playRound()
@@ -174,6 +193,7 @@ struct RockPaperScissorsView: View {
     
     // The player picked parrot.
     func choosePaper() {
+        cheatTime = Int.random(in: 1...10) <= 3
         playerMove = "Parrot"
         playerEmoji = parrotEmoji
         playRound()
@@ -181,6 +201,7 @@ struct RockPaperScissorsView: View {
     
     // The player picked squirrel.
     func chooseScissors() {
+        cheatTime = Int.random(in: 1...10) <= 3
         playerMove = "Squirrel"
         playerEmoji = squirrelEmoji
         playRound()
