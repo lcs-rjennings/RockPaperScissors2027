@@ -39,6 +39,8 @@ struct RockPaperScissorsView: View {
     
     // What happened in the last round.
     @State var result: String = "Let's play!"
+    // More context for what happened in the last round
+    @State var reasonForResult: String = ""
     
     // How many rounds have been played.
     @State var roundsPlayed: Int = 0
@@ -51,6 +53,8 @@ struct RockPaperScissorsView: View {
     
     var body: some View {
         VStack(spacing: 24) {
+            
+            Text("cheatTime is \(cheatTime)")
             
             // The title at the top of the screen.
             Text("Fish Parrot Squirrel")
@@ -82,7 +86,7 @@ struct RockPaperScissorsView: View {
                 VStack(spacing: 8) {
                     Label("Computer", systemImage:
                             "desktopcomputer")
-                        .font(.headline)
+                    .font(.headline)
                     Text(computerEmoji)
                         .font(.system(size: 90))
                     Text(computerMove)
@@ -98,7 +102,10 @@ struct RockPaperScissorsView: View {
             Text(result)
                 .font(.largeTitle)
                 .bold()
-            
+            Text("Also... \(reasonForResult)")
+                .font(.largeTitle)
+                .bold()
+
             Spacer()
             
             // One button for each move the player can make.
@@ -184,8 +191,7 @@ struct RockPaperScissorsView: View {
         
         if cheatTime == true {
             moveThatBeats()
-        }
-        else {
+        } else {
             // Pick 1, 2 or 3. Each number stands for one move.
             let randomNumber: Int = Int.random(in: 1...3)
             
@@ -208,17 +214,16 @@ struct RockPaperScissorsView: View {
         if playerMove == "Fish" {
             computerMove = "Parrot"
             computerEmoji = parrotEmoji
-            result = "Computer Cheated!"
+            reasonForResult = "Computer Cheated!"
         }
         else if playerMove == "Parrot" {
             computerMove = "Squirrel"
             computerEmoji = squirrelEmoji
-            result = "Computer Cheated!"
-        }
-        else {
+            reasonForResult = "Computer Cheated!"
+        } else {
             computerMove = "Fish"
             computerEmoji = fishEmoji
-            result = "Computer Cheated!"
+            reasonForResult = "Computer Cheated!"
         }
         
     }
@@ -228,21 +233,25 @@ struct RockPaperScissorsView: View {
         chooseComputerMove()
         roundsPlayed += 1
         
-        if cheatTime == false && playerMove == computerMove {
-            result = "It's a tie!" }
-
-            // Rock = Fish, Paper = Parrot, Scissors = Squirrel, if that makes things more clear.
-        else if cheatTime == false && playerMove == "Fish" && computerMove == "Squirrel" ||
-                playerMove == "Parrot" &&
-                computerMove == "Fish" ||
-                playerMove == "Squirrel" &&
-                computerMove == "Parrot" {
-                result = "Player Won"
-                
-            } else {
-                result = "Computer won"
-            }
+        if playerMove == computerMove {
+            result = "It's a tie!"
         }
-};    #Preview {
-        RockPaperScissorsView()
+        // Rock = Fish, Paper = Parrot, Scissors = Squirrel, if that makes things more clear.
+        else if playerMove == "Fish" && computerMove == "Squirrel" ||
+                    playerMove == "Parrot" &&
+                    computerMove == "Fish" ||
+                    playerMove == "Squirrel" &&
+                    computerMove == "Parrot" {
+            result = "Player Won"
+            
+        }
+        else {
+            result = "Computer won"
+        }
+        
     }
+}
+
+#Preview {
+    RockPaperScissorsView()
+}
