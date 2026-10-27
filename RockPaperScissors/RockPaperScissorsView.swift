@@ -207,12 +207,15 @@ struct RockPaperScissorsView: View {
         
         if playerMove == "Fish" {
             computerMove = "Parrot"
+            computerEmoji = parrotEmoji
         }
         else if playerMove == "Parrot" {
             computerMove = "Squirrel"
+            computerEmoji = squirrelEmoji
         }
         else {
             computerMove = "Fish"
+            computerEmoji = fishEmoji
         }
         
     }
