@@ -44,7 +44,7 @@ struct RockPaperScissorsView: View {
     @State var roundsPlayed: Int = 0
     
     // 30% chance that computer cheats
-    @State var cheatTime: Bool = Int.random(in: 1...10) <= 10
+    @State var cheatTime: Bool = Int.random(in: 1...10) <= 3
     
     
     // MARK: - Computed properties
@@ -208,14 +208,17 @@ struct RockPaperScissorsView: View {
         if playerMove == "Fish" {
             computerMove = "Parrot"
             computerEmoji = parrotEmoji
+            result = "Computer Cheated!"
         }
         else if playerMove == "Parrot" {
             computerMove = "Squirrel"
             computerEmoji = squirrelEmoji
+            result = "Computer Cheated!"
         }
         else {
             computerMove = "Fish"
             computerEmoji = fishEmoji
+            result = "Computer Cheated!"
         }
         
     }
@@ -225,13 +228,11 @@ struct RockPaperScissorsView: View {
         chooseComputerMove()
         roundsPlayed += 1
         
-        if playerMove == computerMove {
-            result = "It's a tie!"
-        } else if cheatTime == true {
-            result = "Computer cheated!"
+        if cheatTime == false && playerMove == computerMove {
+            result = "It's a tie!" }
+
             // Rock = Fish, Paper = Parrot, Scissors = Squirrel, if that makes things more clear.
-        } else if playerMove == "Fish" &&
-                computerMove == "Squirrel" ||
+        else if cheatTime == false && playerMove == "Fish" && computerMove == "Squirrel" ||
                 playerMove == "Parrot" &&
                 computerMove == "Fish" ||
                 playerMove == "Squirrel" &&
@@ -242,7 +243,6 @@ struct RockPaperScissorsView: View {
                 result = "Computer won"
             }
         }
-    }
-    #Preview {
+};    #Preview {
         RockPaperScissorsView()
     }

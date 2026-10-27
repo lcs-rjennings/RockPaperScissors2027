@@ -12,23 +12,21 @@ The first run takes a minute while Xcode builds the app. After that, the game op
 
 To read the code, click **RockPaperScissorsView.swift** in the list of files on the left. Most of the game lives in that one file.
 
-CHEATING PART DOES NOT WORK
-
 ## How it works
 
-A new feature has been added where the computer cheats 30% of the time. It is done through the variable cheatTime which is a Bool variable. The code randomly generates a number between 1 and 10 every round, and if that number is smaller than 4, then cheatTime becomes true. In the function chooseComputerMove, when cheatTime is true, the function moveThatBeats runs, and it uses if/else if/else to change the computerMove to the winning move depending what the playerMove is (i.e. computerMove = "Parrot" (Paper) if playerMove = "Fish" (Rock)).
+A new feature has been added where the computer cheats 30% of the time. (It is not working). It is done through the variable cheatTime. The code randomly generates a number between 1 and 10 every round, and if that number is smaller or equal to 3, then cheatTime becomes true. It uses if/else if/else to change the computerMove to the winning move depending what the playerMove is (i.e. computerMove = "Parrot" (Paper) if playerMove = "Fish" (Rock)).
 
 In function playRound, it is detected who won: If the computer won, the player won, or it was a tie. It detects a tie by checking if the computerMove = the playerMove. It detects if the player won by using an else if statement containing && and || statements to see if the player chose the winning option. I chose to use && and || statements because it uses less lines of code than multiple "if" statements, and it is clearer to read. Finally, to check if the computer won, there is an else statement because the computer winning is the only other possible solution. 
 
 ## What the game does now/what I added
 
 1. The game tells you whether it was a tie, the player won, or the computer won.
-2. The game cheats 30% of the time and wins.
+2. The game cheats 30% of the time and wins. (Not working)
 3. Instead of Rock, Paper and Scissors, it is now Fish, Parrot, Squirrel.
 4. Changed colour scheme from teal to orange because orange is my favourite colour!
 
 What it does not do yet:
-1. Personalized message when the computer cheats (if the computer is actually cheating). See test table below.
+1. I recognize that the computer cheating feature isn't working. 
 
 ## Testing
 
