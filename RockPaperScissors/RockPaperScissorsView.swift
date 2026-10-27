@@ -158,21 +158,21 @@ struct RockPaperScissorsView: View {
     
     // MARK: - Functions
     
-    // The player picked rock.
+    // The player picked fish.
     func chooseRock() {
         playerMove = "Fish"
         playerEmoji = fishEmoji
         playRound()
     }
     
-    // The player picked paper.
+    // The player picked parrot.
     func choosePaper() {
         playerMove = "Parrot"
         playerEmoji = parrotEmoji
         playRound()
     }
     
-    // The player picked scissors.
+    // The player picked squirrel.
     func chooseScissors() {
         playerMove = "Squirrel"
         playerEmoji = squirrelEmoji
@@ -224,9 +224,10 @@ struct RockPaperScissorsView: View {
         
         if playerMove == computerMove {
             result = "It's a tie!"
-        } else {
+        } else if cheatTime == true {
+            result = "Computer cheated!"
             // Rock = Fish, Paper = Parrot, Scissors = Squirrel, if that makes things more clear.
-            if playerMove == "Fish" &&
+        } else if playerMove == "Fish" &&
                 computerMove == "Squirrel" ||
                 playerMove == "Parrot" &&
                 computerMove == "Fish" ||
@@ -239,7 +240,6 @@ struct RockPaperScissorsView: View {
             }
         }
     }
-}
     #Preview {
         RockPaperScissorsView()
     }

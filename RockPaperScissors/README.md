@@ -23,7 +23,18 @@ In function playRound, it is detected who won: If the computer won, the player w
 1. The game tells you whether it was a tie, the player won, or the computer won.
 2. The game cheats 30% of the time and wins.
 3. Instead of Rock, Paper and Scissors, it is now Fish, Parrot, Squirrel.
-4. Changed colour scheme from teal to orange.
+4. Changed colour scheme from teal to orange because orange is my favourite colour!
+
+What it does not do yet:
+1. Personalized message when the computer cheats (if the computer is actually cheating). See test table below.
+
+## Testing
+
+| Test | Chosen Input | What should happen | What did happen |
+| :--- | :---: | :---: | --: |
+| Make the computer cheat 100% of the time. |  Computer would cheat if the random number from 1 to 10 was smaller than 11. | The computer should always beat the player. | The computer always beat the player. |
+| Make sure that Fish beats Squirrel, Squirrel beats Parrot, and Parrot beats Fish. | Chose each option until the computer chose the winning option, losing option, and option that tied. | The display message should appear accordingly to the situation. | The correct message appeared each round. |
+| Make the computer have a personalized message when cheating |  Instead of simply "Computer Won", "Computer Cheated" appears when cheatTime = true | The "Computer Cheated" line should appear one third of the time with the normal code, but I also tried it with the computer cheating 100% of the time. | The message did not appear for the 30% chance, but it did appear when the computer cheated every round. |
 
 ## Credits
 
