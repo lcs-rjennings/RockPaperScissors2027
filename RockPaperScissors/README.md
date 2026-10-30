@@ -32,8 +32,8 @@ In function playRound, it is detected who won: If the computer won, the player w
 | :--- | :---: | :---: | --: |
 | Make the computer cheat 100% of the time. |  Computer would cheat if the random number from 1 to 10 was smaller than 11. | The computer should always beat the player. | The computer always beat the player. |
 | Make sure that Fish beats Squirrel, Squirrel beats Parrot, and Parrot beats Fish. | Chose each option until the computer chose the winning option, losing option, and option that tied. | The display message should appear accordingly to the situation. | The correct message appeared each round. |
-| Make the computer have a personalized message when cheating. |  Instead of simply "Computer Won", "Computer Cheated" appears when cheatTime = true | The "Computer Cheated" line should appear one third of the time with the normal code, but I also tried it with the computer cheating 100% of the time. | The message did not appear for the 30% chance, but it did appear when the computer cheated every round. |
-| Check if the computer has a chance to cheat from each button pressed. | Clicked each button multiple times until "Computer Cheated" appeared. | "Computer Cheated" message appears and cheatTime = True | "Computer Cheated" message appears and cheatTime = True |
+| Check if the computer has a chance to cheat from each button pressed. | Clicked each button multiple times until cheatTime = True appears at the top | cheatTime = True appears at the top of the page | cheatTime = True appeared at the top of the page |
+| Make the computer have a personalized message when cheating. |  Instead of simply "Computer Won", "Computer Cheated" appears when cheatTime = true | The "Computer Cheated" line should appear 30% of the time. | The "Computer Cheated" line appeared 30% of the time. |
 
 ## Credits
 
