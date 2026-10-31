@@ -36,7 +36,9 @@ In function playRound, it is detected who won: If the computer won, the player w
 | Make the computer have a personalized message when cheating. |  Instead of simply "Computer Won", "Computer Cheated" appears when cheatTime = true | The "Computer Cheated" line should appear 30% of the time. | The "Computer Cheated" line appeared 30% of the time. |
 | Make the "Computer Cheated" mesage disappear when the computer is no longer cheating. | Try clicking the rock, paper, and scissors buttons until the message appears and cheatTime = true. | Click one of the buttons again, and if cheatTime = false, the message should disappear. | The message disappeared for all three buttons. |
 | Cheat at the edge (3) | Line 188 fixed at 3; I choose Fish | Computer plays Parrot; “Computer won”; “Also... Computer Cheated!” | Computer plays Parrot; “Computer won”; “Also... Computer Cheated!” |
-| No cheat, just past the edge (4) | Line 188 fixed at 4, and line 217 fixed at 1; I choose Fish. | Computer randomly plays either fish, squirrel, or parrot; If it plays fish, "It's a tie!" should appear, if it plays squirrel, "Player won" should appear, and if it plays parrot, "Computer won" should appear, although cheatTime should always be false and the "Computer Cheated!" message should not appear. | The outcome was as anticipated. |
+| No cheat, just past the edge (4) | Line 188 fixed at 4, and line 220 fixed at 1; I choose Fish. | Computer plays Fish; "It's a tie!" message should appear; cheatTime should always be false and the "Computer Cheated!" message should not appear. | The outcomes were as anticipated. |
+| Cheat when I choose Parrot. | Line 197 fixed at 3; I choose Parrot. | cheatTime = true; "Also... Computer Cheated!" message should appear; "Computer won" message should appear; Computer chooses Squirrel every time. | The outcomes were as anticipated. |
+| Cheat when I choose Squirrel. | Line 206 fixed at 3; I choose Squirrel. | cheatTime = true; "Also... Computer Cheated!" message should appear; "Computer won" message should appear; Computer chooses Fish every time. | The outcomes were as anticipated. |
 
 ## Credits
 
