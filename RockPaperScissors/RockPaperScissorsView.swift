@@ -54,7 +54,7 @@ struct RockPaperScissorsView: View {
     var body: some View {
         VStack(spacing: 24) {
             
-            Text("cheatTime is \(cheatTime)")
+           // FOR TESTING ONLY: Text("cheatTime is \(cheatTime)")
             
             // The title at the top of the screen.
             Text("Fish Parrot Squirrel")
