@@ -102,7 +102,7 @@ struct RockPaperScissorsView: View {
             Text(result)
                 .font(.largeTitle)
                 .bold()
-            Text("Also... \(reasonForResult)")
+            Text("\(reasonForResult)")
                 .font(.largeTitle)
                 .bold()
 
@@ -188,6 +188,7 @@ struct RockPaperScissorsView: View {
         cheatTime = Int.random(in: 1...10) <= 3
         playerMove = "Fish"
         playerEmoji = fishEmoji
+        reasonForResult = ""
         playRound()
     }
     
@@ -196,6 +197,7 @@ struct RockPaperScissorsView: View {
         cheatTime = Int.random(in: 1...10) <= 3
         playerMove = "Parrot"
         playerEmoji = parrotEmoji
+        reasonForResult = ""
         playRound()
     }
     
@@ -204,6 +206,7 @@ struct RockPaperScissorsView: View {
         cheatTime = Int.random(in: 1...10) <= 3
         playerMove = "Squirrel"
         playerEmoji = squirrelEmoji
+        reasonForResult = ""
         playRound()
     }
     

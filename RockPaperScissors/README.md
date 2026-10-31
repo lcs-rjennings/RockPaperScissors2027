@@ -34,6 +34,7 @@ In function playRound, it is detected who won: If the computer won, the player w
 | Make sure that Fish beats Squirrel, Squirrel beats Parrot, and Parrot beats Fish. | Chose each option until the computer chose the winning option, losing option, and option that tied. | The display message should appear accordingly to the situation. | The correct message appeared each round. |
 | Check if the computer has a chance to cheat from each button pressed. | Clicked each button multiple times until cheatTime = True appears at the top | cheatTime = True appears at the top of the page | cheatTime = True appeared at the top of the page |
 | Make the computer have a personalized message when cheating. |  Instead of simply "Computer Won", "Computer Cheated" appears when cheatTime = true | The "Computer Cheated" line should appear 30% of the time. | The "Computer Cheated" line appeared 30% of the time. |
+| Make the "Computer Cheated" mesage disappear when the computer is no longer cheating. | Try clicking the rock, paper, and scissors buttons until the message appears and cheatTime = true. | Click one of the buttons again, and if cheatTime = false, the message should disappear. | The message disappeared for all three buttons. |
 
 ## Credits
 
