@@ -21,7 +21,7 @@ In function playRound, it is detected who won: If the computer won, the player w
 ## What the game does now/what I added
 
 1. The game tells you whether it was a tie, the player won, or the computer won.
-2. The game cheats 30% of the time and wins.
+2. The game cheats 30% of the time and wins. A cheating message appears when the computer is cheating, and disappears when it is not.
 3. Instead of Rock, Paper and Scissors, it is now Fish, Parrot, Squirrel.
 4. Changed colour scheme from teal to orange because orange is my favourite colour!
 5. New round button resets the code and allows the player to play again.
@@ -35,6 +35,8 @@ In function playRound, it is detected who won: If the computer won, the player w
 | Check if the computer has a chance to cheat from each button pressed. | Clicked each button multiple times until cheatTime = True appears at the top | cheatTime = True appears at the top of the page | cheatTime = True appeared at the top of the page |
 | Make the computer have a personalized message when cheating. |  Instead of simply "Computer Won", "Computer Cheated" appears when cheatTime = true | The "Computer Cheated" line should appear 30% of the time. | The "Computer Cheated" line appeared 30% of the time. |
 | Make the "Computer Cheated" mesage disappear when the computer is no longer cheating. | Try clicking the rock, paper, and scissors buttons until the message appears and cheatTime = true. | Click one of the buttons again, and if cheatTime = false, the message should disappear. | The message disappeared for all three buttons. |
+| Cheat at the edge (3) | Line 188 fixed at 3; I choose Fish | Computer plays Parrot; “Computer won”; “Also... Computer Cheated!” | Computer plays Parrot; “Computer won”; “Also... Computer Cheated!” |
+| No cheat, just past the edge (4) | Line 188 fixed at 4, and line 217 fixed at 1; I choose Fish. | Computer randomly plays either fish, squirrel, or parrot; If it plays fish, "It's a tie!" should appear, if it plays squirrel, "Player won" should appear, and if it plays parrot, "Computer won" should appear, although cheatTime should always be false and the "Computer Cheated!" message should not appear. | The outcome was as anticipated. |
 
 ## Credits
 
