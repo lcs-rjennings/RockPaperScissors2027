@@ -39,6 +39,7 @@ In function playRound, it is detected who won: If the computer won, the player w
 | No cheat, just past the edge (4) | Line 188 fixed at 4, and line 220 fixed at 1; I choose Fish. | Computer plays Fish; "It's a tie!" message should appear; cheatTime should always be false and the "Computer Cheated!" message should not appear. | The outcomes were as anticipated. |
 | Cheat when I choose Parrot. | Line 197 fixed at 3; I choose Parrot. | cheatTime = true; "Also... Computer Cheated!" message should appear; "Computer won" message should appear; Computer chooses Squirrel every time. | The outcomes were as anticipated. |
 | Cheat when I choose Squirrel. | Line 206 fixed at 3; I choose Squirrel. | cheatTime = true; "Also... Computer Cheated!" message should appear; "Computer won" message should appear; Computer chooses Fish every time. | The outcomes were as anticipated. |
+| A fair round after a cheat round. | Line 188 fixed at 3, line 197 fixed at 10, and line 220 fixed at 1; I choose Fish, then Parrot. | After choosing Fish, cheatTime = true; then when choosing Parrot, cheatTime = false; computer chooses Fish; "Player won" message should appear. | The outcomes were as anticipated. |
 
 ## Credits
 
